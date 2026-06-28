@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Speech Emotion Recognition</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <nav>
+
+        <div class="logo">
+            EmotionAI
+        </div>
+
+        <ul>
+
+            <li><a href="#">Home</a></li>
+
+            <li><a href="#">How it Works</a></li>
+
+            <li><a href="#">About</a></li>
+
+        </ul>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <div class="hero-left">
+
+            <h1>
+
+                Understand Human Emotions Through Voice
+
+            </h1>
+
+            <p>
+
+                Record your voice and let our deep learning
+                CNN model analyze emotional patterns using
+                MFCC feature extraction.
+
+            </p>
+
+            <div class="voice-studio">
+
+                <div class="studio-header">
+
+                    <div class="status-dot"></div>
+
+                    <span id="status-text">
+
+                        Ready to Record
+
+                    </span>
+
+                </div>
+
+                <div class="waveform">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+                <div class="studio-buttons">
+
+                    <button id="record-btn">
+
+                        Record
+
+                    </button>
+
+                    <button id="stop-btn">
+
+                        Stop
+
+                    </button>
+
+                    <button id="predict-btn">
+
+                        Predict
+
+                    </button>
+
+                </div>
+                <audio id="audio-player" controls style="display:none; margin-top:25px; width:100%;"></audio>
+
+                <div class="result-card" id="result-card">
+
+                    <h3>Prediction Result</h3>
+
+                    <div class="emotion-result" id="emotion-result">
+                        Waiting for prediction...
+                    </div>
+
+                    <div class="confidence-wrapper">
+
+                        <div class="confidence-bar">
+
+                            <div class="confidence-fill" id="confidence-fill"></div>
+
+                        </div>
+
+                        <span id="confidence-text">
+                            0%
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-right">
+
+            <div class="circle"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
